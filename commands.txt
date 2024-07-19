@@ -20,4 +20,4 @@ az webapp up --runtime PYTHON:3.9 --sku B1 --logs
 To fix, use an appserviceplan and resource group that already exists. 
 
 Changed B1 to B2, more expensive, but available. costs 24 dollars per month instead of 12 ... 
-az webapp up --name azquickstart-to-flaskr --runtime PYTHON:3.9 --sku B2 --logs --resource-group portfolio_france_c_rg --plan az-to-flaskr-B2 --subscription portfolio
+az webapp up --name azquickstart-to-flaskr --runtime PYTHON:3.9 --sku B2 --logs --resource-group portfolio_france_c_rg --plan B2-dev --subscription portfolio
