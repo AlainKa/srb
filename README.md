@@ -1,16 +1,23 @@
-# Azure quickstart to flaskr
+# Strasbourg Resto Bistro
 
-The goal of this repository is to provide a sample flask application deployed on azure web app.
+Self-taught project. The aim is to create a blog type application that allows people to create blog posts that reference a restaurant.
 
-The repository can thus be edited in order to create new flasks web apps.
+The application is meant to have the following features :
 
-In order to ensure that through the all process the app is deploying correctly on azure web app we start from the azure web app tutorial.
+* The post contains pictures uploaded by the user of the restaurant. 
+* Given the address provided by the user, the post displays a map of the restaurant with a marker.
+* Global map of strasbourg with markers for all the restaurants that had at least one post.
+* Pointing on a given marker allows the user to see associated posts (probably full display of the best post and links for the others).  
+* Web access
 
-Then we will go through edits, testing that the deployment is still functional, up until we have an hosted version of flaskr running on azure web apps.
+Additional ideas :
 
-Web pages :
+* Likes 
 
-* Azure quickstart, https://github.com/Azure-Samples/msdocs-python-flask-webapp-quickstart, https://learn.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cazure-cli-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli 
-* Flask tutorial flaskr, https://flask.palletsprojects.com/en/2.3.x/tutorial/.
+# Technical stack
 
-Running maybe on azure  (depending on costs, free vm availability ...) : https://azquickstart-to-flaskr.azurewebsites.net/ 
+The software I am using to build this website are the following :
+
+* Flask for the web development
+* Leaflet to manage the maps
+* Azure web app for the web deployment

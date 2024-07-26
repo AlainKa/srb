@@ -23,4 +23,4 @@ To fix, use an appserviceplan and resource group that already exists.
 
 Changed B1 to B2, more expensive, but available. costs 24 dollars per month instead of 12 ...
 => The app plan don't automatically use the localation from the subscription or the resource group. Force the location with --location and find one where there are B1 instances available
-az webapp up --name azquickstart-to-flaskr --runtime PYTHON:3.9 --sku B1 --logs --resource-group portfolio_france_c_rg --plan B1-dev-fr-c --subscription portfolio --location francecentral
+az webapp up --name strasbourg-resto-bistro --runtime PYTHON:3.9 --sku B1 --logs --resource-group portfolio_france_c_rg --plan B1-dev-fr-c --subscription portfolio --location francecentral
