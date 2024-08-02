@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+
+  {#
   <form method="post">
     <label for="title">Title</label>
     <input name="title" id="title" value="{{ request.form['title'] }}" required>
@@ -12,4 +14,37 @@
     <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
     <input type="submit" value="Save">
   </form>
+  #}
+
+<form method="post">
+  <section class="articles">
+    <div class="column is-8 is-offset-2">
+      <section class="articles">
+          <!-- START ARTICLE -->
+        <div class="card article">
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content has-text-centered">
+                <p class="title article-title">
+                  <label for="title">Titre</label>
+                  <input name="title" id="title" value="{{ request.form['title'] }}" required> </p>
+              </div>
+            </div>
+
+            <div class="content article-body">
+                <label for="body">Texte </label>
+                <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+            </div>
+            <div class="create-submit">
+              <input type="submit" value="Save">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</form>
+      <!-- END ARTICLE -->
 {% endblock %}
