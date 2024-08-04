@@ -1,3 +1,5 @@
 Flask==2.2.2
 gunicorn
 Werkzeug==2.2.2
+coverage[toml]==7.6.0
+pytest==8.3.2

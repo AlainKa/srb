@@ -17,6 +17,9 @@ az webapp up --runtime PYTHON:3.9 --sku B1 --logs
 	No available instances to satisfy this request. App Service is attempting to increase capacity. 
 	Please retry your request later. 
 	If urgent, this can be mitigated by deploying this to a new resource group.
+
+
+coverage run -m pytest
 	
 
 To fix, use an appserviceplan and resource group that already exists. 
