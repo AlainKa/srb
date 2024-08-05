@@ -32,7 +32,10 @@
               -->
 
               <div class="media-content has-text-centered">
-                <p class="title article-title">{{ post['title'] }}</p>
+                <p> {% if g.user['id'] == post['author_id'] %} <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>{% endif %} </p>
+                <p class="title article-title">
+                  {{ post['title'] }}
+                </p>
                 <p class="subtitle is-6 article-subtitle">
                   {{ post['username'] }} le {{ post['created'].strftime('%Y-%m-%d') }}
                 </p>
