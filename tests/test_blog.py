@@ -14,7 +14,7 @@ def test_index(client, auth):
     assert b'test\nbody' in response.data
 
     # TODO Give an option to users so that they can update their articles
-    # assert b'href="/1/update"' in response.data
+    assert b'href="/1/update"' in response.data
 
 @pytest.mark.parametrize('path', (
     '/create',
