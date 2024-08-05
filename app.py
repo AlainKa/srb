@@ -4,6 +4,8 @@ from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
 
 
+UPLOAD_FOLDER = './img'
+
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
@@ -20,6 +22,8 @@ def create_app(test_config=None):
     else:
         # load the test config if passed in
         app.config.update(test_config)
+
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
     # ensure the instance folder exists
     try:

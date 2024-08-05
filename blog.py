@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from flask import Blueprint
 from flask import flash
 from flask import g
@@ -5,7 +7,9 @@ from flask import redirect
 from flask import render_template
 from flask import request
 from flask import url_for
+from flask import current_app
 from werkzeug.exceptions import abort
+from werkzeug.utils import secure_filename
 
 from auth import login_required
 from db import get_db
@@ -64,6 +68,15 @@ def create():
     if request.method == "POST":
         title = request.form["title"]
         body = request.form["body"]
+        img = request.files["img"]
+        print(str(request.form))
+        print(str(request.files))
+
+        filename = secure_filename(img.filename)
+        upload_folder = Path(current_app.config['UPLOAD_FOLDER'])
+        upload_folder.mkdir(exist_ok=True, parents=True)
+        img.save(upload_folder / filename)
+
         error = None
 
         if not title:

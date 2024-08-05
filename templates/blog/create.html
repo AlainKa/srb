@@ -16,7 +16,7 @@
   </form>
   #}
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
   <section class="articles">
     <div class="column is-8 is-offset-2">
       <section class="articles">
@@ -37,6 +37,23 @@
                 <label for="body">Texte </label>
                 <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
             </div>
+
+
+
+            <div class="file has-name is-boxed is-right">
+              <label class="file-label">
+                <input class="file-input" type="file" name="img" id="img" />
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                    <span class="file-label"> Choose a file… </span>
+                  </span>
+                <span class="file-name"> Screen Shot 2017-07-29 at 15.54.25.png </span>
+              </label>
+            </div>
+
+
             <div class="create-submit">
               <input type="submit" value="Save">
             </div>
