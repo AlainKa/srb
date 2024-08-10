@@ -22,10 +22,13 @@ def index():
     """Show all the posts, most recent first."""
     db = get_db()
     posts = db.execute(
-        "SELECT p.id, title, body, created, author_id, username"
+        "SELECT p.id, title, body, filename, created, author_id, username"
         " FROM post p JOIN user u ON p.author_id = u.id"
         " ORDER BY created DESC"
     ).fetchall()
+
+    print("index posts : " + str(posts))
+
     return render_template("blog/index.html", posts=posts)
 
 
@@ -44,13 +47,15 @@ def get_post(id, check_author=True):
     post = (
         get_db()
         .execute(
-            "SELECT p.id, title, body, created, author_id, username"
+            "SELECT p.id, title, body, filename, created, author_id, username"
             " FROM post p JOIN user u ON p.author_id = u.id"
             " WHERE p.id = ?",
             (id,),
         )
         .fetchone()
     )
+
+    print("get_post " + str(post))
 
     if post is None:
         abort(404, f"Post id {id} doesn't exist.")
@@ -87,8 +92,8 @@ def create():
         else:
             db = get_db()
             db.execute(
-                "INSERT INTO post (title, body, author_id) VALUES (?, ?, ?)",
-                (title, body, g.user["id"]),
+                "INSERT INTO post (title, body, author_id, filename) VALUES (?, ?, ?, ?)",
+                (title, body, g.user["id"], str(upload_folder / filename)),
             )
             db.commit()
             return redirect(url_for("blog.index"))

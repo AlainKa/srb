@@ -4,7 +4,7 @@ from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
 
 
-UPLOAD_FOLDER = './img'
+UPLOAD_FOLDER = './static/images'
 
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
