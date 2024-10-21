@@ -1,5 +1,6 @@
 # Strasbourg Resto Bistro
 
+Check out the wiki : [Strasbourg Resto Bisto](https://github.com/AlainKa/srb/wiki)
 Self-taught project. The aim is to create a blog type application that allows people to create blog posts that reference a restaurant.
 
 The application is meant to have the following features :
