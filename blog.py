@@ -10,6 +10,8 @@ from flask import url_for
 from flask import current_app
 from werkzeug.exceptions import abort
 from werkzeug.utils import secure_filename
+from flask_wtf import FlaskForm
+import wtforms
 
 from auth import login_required
 from db import get_db
@@ -100,6 +102,18 @@ def create():
 
     return render_template("blog/create.html")
 
+class PostCreationForm(FlaskForm):
+    body = wtforms.StringField('Text')
+    photo = wtforms.FileField('Photo')
+
+@bp.route("/wtf", methods=("GET", "POST"))
+def wtf():
+    post_form = PostCreationForm()
+
+    body = post_form.body
+    photo = post_form.photo
+
+    return render_template("blog/wtf.html", form=post_form)
 
 @bp.route("/<int:id>/update", methods=("GET", "POST"))
 @login_required

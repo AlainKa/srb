@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post Creation</title>
+</head>
+<body>
+	<h1>My Form</h1>
+	<form method="post" action="/" enctype="multipart/form-data">
+
+		<p>{{ form.body.label }} {{ form.body() }}</p>
+		<p>{{ form.photo.label }} {{ form.photo() }}</p>
+
+		<p><input type="submit" value="Submit"></p>
+	</form>
+</body>
+</html>1
